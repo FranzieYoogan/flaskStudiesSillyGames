@@ -18,10 +18,36 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/"><img id="navbarIcon" class="navbarIcon" src="/static/img/nintendo.png" alt=""></a>
+          <a class="navbar-brand" href="/"><img onmouseover="navbarIconEvent()" onmouseout="navbarIconEventOut()" id="navbarIcon" class="navbarIcon" src="/static/img/nintendo.png" alt=""></a>
           <button class="navbar-toggler" onclick="showMenu()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          
+
+          <script>
+
+            function navbarIconEventOut() {
+
+              
+              document.getElementById('navbarIcon').style.marginLeft = '0.5em'
+            document.getElementById('navbarIcon').style.transition = '1s'
+            }
+
+              function navbarIconEvent() {
+
+                document.getElementById('navbarIcon').style.marginLeft = '-6px'
+            document.getElementById('navbarIcon').style.transition = '1s'
+            setTimeout(() => {
+              document.getElementById('navbarIcon').style.marginLeft = '0.5em'
+            document.getElementById('navbarIcon').style.transition = '1s'
+            }, 300);
+
+
+              }
+     
+
+          </script>
+
 
           <script>
            var  click = 0

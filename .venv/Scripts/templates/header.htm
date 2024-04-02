@@ -14,11 +14,11 @@
     {% endblock %}
 
 </head>
-<body>
+<body onload="navbarEvent()">
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img class="navbarIcon" src="/static/img/nintendo.png" alt=""></a>
+          <a class="navbar-brand" href="#"><img id="navbarIcon" class="navbarIcon" src="/static/img/nintendo.png" alt=""></a>
           <button class="navbar-toggler" onclick="showMenu()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,14 +43,39 @@
             }
 
           </script>
+
+          <script>
+            
+            function navbarEvent() {
+
+              document.getElementById('navbarIcon').style.marginLeft = "0.5em"
+              document.getElementById('navbarIcon').style.opacity = "1"
+              document.getElementById('navbarIcon').style.transition = "1s"
+
+
+              if(window.location.href == "http://127.0.0.1:5000/rockpaperscissors") {
+
+                document.getElementById('rockPaperScissors').style.border = "1px solid black"
+
+              }
+
+              if(window.location.href == "http://127.0.0.1:5000/") {
+
+document.getElementById('index').style.border = "1px solid black"
+
+}
+
+            }
+
+          </script>
     
 
             
                 <div class="collapse navbar-collapse navbarStyle" id="navbarNavAltMarkup">
                     <div>
                         <div class="navbar-nav" >
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
-                            <a class="nav-link" href="/rockpaperscissors">Rock Paper and Scissors</a>
+                            <a id="index" class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a id="rockPaperScissors" class="nav-link" href="/rockpaperscissors">Rock Paper and Scissors</a>
                   
                           </div> 
                     </div>

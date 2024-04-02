@@ -19,9 +19,30 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img class="navbarIcon" src="/static/img/nintendo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" onclick="showMenu()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+          <script>
+           var  click = 0
+            function showMenu() {
+              click++
+
+              if(click == 1) {
+
+                document.getElementById('navbarNavAltMarkup').style.display = "block"
+                document.getElementById('navbarNavAltMarkup').style.transition = "1s"
+              }
+               else if(click == 2 ) {
+                click = 0
+                document.getElementById('navbarNavAltMarkup').style.display = "none"
+                document.getElementById('navbarNavAltMarkup').style.transition = "1s"
+               }
+       
+
+            }
+
+          </script>
     
 
             

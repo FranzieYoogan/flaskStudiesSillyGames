@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+    {% block styles %}
+    <link rel="stylesheet" href="/static/css/header.css">
+    {% endblock %}
+
+</head>
+<body onload="navbarEvent()">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img id="navbarIcon" class="navbarIcon" src="/static/img/nintendo.png" alt=""></a>
+          <button class="navbar-toggler" onclick="showMenu()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <script>
+           var  click = 0
+            function showMenu() {
+              click++
+
+              if(click == 1) {
+
+                document.getElementById('navbarNavAltMarkup').style.display = "block"
+                document.getElementById('navbarNavAltMarkup').style.transition = "1s"
+              }
+               else if(click == 2 ) {
+                click = 0
+                document.getElementById('navbarNavAltMarkup').style.display = "none"
+                document.getElementById('navbarNavAltMarkup').style.transition = "1s"
+               }
+       
+
+            }
+
+          </script>
+
+          <script>
+            
+            function navbarEvent() {
+
+              document.getElementById('navbarIcon').style.marginLeft = "0.5em"
+              document.getElementById('navbarIcon').style.opacity = "1"
+              document.getElementById('navbarIcon').style.transition = "1s"
+
+
+              if(window.location.href == "http://127.0.0.1:5000/rockpaperscissors") {
+
+                document.getElementById('rockPaperScissors').style.border = "1px solid black"
+
+              }
+
+              if(window.location.href == "http://127.0.0.1:5000/") {
+
+document.getElementById('index').style.border = "1px solid black"
+
+
+}
+
+            }
+
+          </script>
+    
+
+            
+                <div class="collapse navbar-collapse navbarStyle" id="navbarNavAltMarkup">
+                    <div>
+                        <div class="navbar-nav" >
+                            <a id="index" class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a id="rockPaperScissors" class="nav-link" href="/rockpaperscissors">Rock Paper and Scissors</a>
+                  
+                          </div> 
+                    </div>
+               
+                </div>
+     
+
+       
+          
+          </div>
+        </div>
+      </nav>
+    
+</body>
+</html>
